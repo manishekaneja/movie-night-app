@@ -13,7 +13,9 @@ export default function GenrePage() {
 
   useEffect(() => {
     let data = [];
-    Object.keys(value).forEach((key) => data.push(value[key].item));
+    Object.keys(value)
+      .filter((key) => value[key].bookmarked)
+      .forEach((key) => data.push(value[key].item));
     setItems(data);
     getGenres().then((data: Genre[]) => {
       const map: Record<string, string> = {};
