@@ -12,7 +12,7 @@ export const ItemGrid: FC<{
         <h2>{title}...</h2>
       </div>
       <div className="grid grid-cols-1 p-2 lg:p-0 sm:grid-cols-2 md:grid-cols-3 hover-high gap-8 relative">
-        {list.map((singleItem) => (
+        {list && list.map((singleItem) => (
           <ItemCard genreMap={genreMap} data={singleItem} key={singleItem.id} />
         ))}
       </div>
